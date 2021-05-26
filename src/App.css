@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.main-body{
+    height: 600px;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #ffc;
+    border: 2px solid #555;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* messages */
+
+.messages-list{
+    height: 85%;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.my-message{
+    text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.user-message{
+    text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+.message-username{
+    font-weight: 600;
+    color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message-text{
+    padding: 5px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    color: #000;
+}
+
+/* input */
+
+.input input{
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 12px;
+    width: 80%;
+}
+
+.input button{
+    padding: 13px;
+    width: 10%;
+    border: none;
+    border-radius: 8px;
+
+    background-color: #f55;
+    color: #ddd;
+}
+
+/* responsive */
+
+@media (max-width: 1200px) {
+    .input input{
+        width: 68%;
+    }
+    .input button{
+        width: 12%;
+    }
 }
