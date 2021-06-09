@@ -4,7 +4,7 @@
     margin-top: 20px;
     margin-left: 25%;
     margin-right: 25%;
-    background-color: #ffc;
+    background-color: #ffd;
     border: 2px solid #555;
 }
 
@@ -18,10 +18,12 @@
 }
 
 .my-message{
+    margin-left: 50%;
     text-align: right;
 }
 
 .user-message{
+    margin-right: 50%;
     text-align: left;
 }
 
@@ -30,14 +32,12 @@
     color: #555;
 }
 
-.message-color{
-    background-color: #ccc;
-}
-
 .message-text{
     padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 8px;
-    border-radius: 8px;
+    border-radius: 50px;
     color: #000;
 }
 

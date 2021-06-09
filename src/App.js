@@ -64,16 +64,6 @@ export default class App extends React.Component {
   }
 
   onMessageSend = (message) => {
-    const messages = this.state.messages
-    /*
-    messages.push({
-      member: this.state.member,
-      text: message
-    })
-    */
-
-    this.setState({messages: messages})
-    
     this.drone.publish({
       room: "observable-room",
       message
