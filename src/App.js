@@ -5,30 +5,6 @@ import Messages from './Components/Messages';
 import Input from './Components/Input';
 
 export default class App extends React.Component {
-
-  constructor() {
-    super();
-    this.drone = new window.Scaledrone("6Ff9zGbbNnztVntZ", {
-      data: this.state.member
-    });
-    this.drone.on('open', error => {
-      if (error) {
-        return console.error(error);
-      }
-      const member = {...this.state.member};
-      member.id = this.drone.clientId;
-      this.setState({member});
-    });
-
-    const room = this.drone.subscribe("observable-room");
-
-    room.on('data', (data, member) => {
-      const messages = this.state.messages;
-      messages.push({member, text: data});
-      this.setState({messages});
-    });
-  }
-
   randomName = () => {
     const adjectives = ["autumn", "hidden", "bitter", "misty", "silent", "empty", 
     "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", 
@@ -64,14 +40,40 @@ export default class App extends React.Component {
     }
   }
 
+  constructor() {
+    super();
+    this.drone = new window.Scaledrone("6Ff9zGbbNnztVntZ", {
+      data: this.state.member
+    });
+    this.drone.on('open', error => {
+      if (error) {
+        return console.error(error);
+      }
+      const member = {...this.state.member};
+      member.id = this.drone.clientId;
+      this.setState({member});
+    });
+
+    const room = this.drone.subscribe("observable-room");
+
+    room.on('data', (data, member) => {
+      const messages = this.state.messages;
+      messages.push({member, text: data});
+      this.setState({messages});
+    });
+  }
+
   onMessageSend = (message) => {
     const messages = this.state.messages
+    /*
     messages.push({
-      text: message,
-      member: this.state.member
+      member: this.state.member,
+      text: message
     })
-    this.setState({messages: messages})
+    */
 
+    this.setState({messages: messages})
+    
     this.drone.publish({
       room: "observable-room",
       message

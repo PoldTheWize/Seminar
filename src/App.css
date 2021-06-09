@@ -30,6 +30,10 @@
     color: #555;
 }
 
+.message-color{
+    background-color: #ccc;
+}
+
 .message-text{
     padding: 5px;
     padding-bottom: 8px;
