@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 
 import Messages from './Components/Messages';
@@ -29,7 +29,13 @@ export default class App extends React.Component {
   }
   
   randomColor = () => {
-    return '#' + Math.floor(Math.random() * 0xFFF).toString(16);
+    let colorArr = [
+      '#0ce','#03a','#c0e','#74a','#058',
+      '#e70','#0eb','#09c','#ea4','#ee3',
+      '#bb9','#8e2','#b04','#098','#eb8',
+      '#956','#078','#d18','#912','#740'
+    ]
+    return colorArr[Math.floor(Math.random() * colorArr.length)];
   }
 
   state = {

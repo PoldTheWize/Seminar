@@ -11,6 +11,7 @@
 /* messages */
 
 .messages-list{
+    overflow: auto;
     height: 85%;
     list-style-type: none;
     padding-left: 10px;
@@ -18,13 +19,19 @@
 }
 
 .my-message{
-    margin-left: 50%;
+    max-width: 60%;
+    width: 100%;
+    word-break: break-all;
     text-align: right;
+    float: right;
 }
 
 .user-message{
-    margin-right: 50%;
+    max-width: 70%;
+    width: 100%;
+    word-break: break-all;
     text-align: left;
+    float: left;
 }
 
 .message-username{
@@ -32,13 +39,18 @@
     color: #555;
 }
 
-.message-text{
+.my-text, .user-text{
+    width: fit-content;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 8px;
-    border-radius: 50px;
+    border-radius: 15px;
     color: #000;
+}
+
+.my-text{
+    float: right;
 }
 
 /* input */
